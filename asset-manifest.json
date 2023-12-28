@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/codepen-ai/static/css/main.af154c5f.css",
-    "main.js": "/codepen-ai/static/js/main.d29e25cc.js",
+    "main.css": "/codepen-ai/static/css/main.00b787b3.css",
+    "main.js": "/codepen-ai/static/js/main.cee5fb3a.js",
     "index.html": "/codepen-ai/index.html",
-    "main.af154c5f.css.map": "/codepen-ai/static/css/main.af154c5f.css.map",
-    "main.d29e25cc.js.map": "/codepen-ai/static/js/main.d29e25cc.js.map"
+    "main.00b787b3.css.map": "/codepen-ai/static/css/main.00b787b3.css.map",
+    "main.cee5fb3a.js.map": "/codepen-ai/static/js/main.cee5fb3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.af154c5f.css",
-    "static/js/main.d29e25cc.js"
+    "static/css/main.00b787b3.css",
+    "static/js/main.cee5fb3a.js"
   ]
 }
