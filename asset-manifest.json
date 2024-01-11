@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/codepen-ai/static/css/main.cb613a38.css",
+    "main.css": "/codepen-ai/static/css/main.122070d2.css",
     "main.js": "/codepen-ai/static/js/main.55c36bea.js",
     "static/media/logo.png": "/codepen-ai/static/media/logo.b01b8ead9b8a6a0ca59b.png",
     "static/media/spinner.svg": "/codepen-ai/static/media/spinner.f069ff2d7b7a77fd85724b28f4db9569.svg",
     "index.html": "/codepen-ai/index.html",
-    "main.cb613a38.css.map": "/codepen-ai/static/css/main.cb613a38.css.map",
+    "main.122070d2.css.map": "/codepen-ai/static/css/main.122070d2.css.map",
     "main.55c36bea.js.map": "/codepen-ai/static/js/main.55c36bea.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb613a38.css",
+    "static/css/main.122070d2.css",
     "static/js/main.55c36bea.js"
   ]
 }
