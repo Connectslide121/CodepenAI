@@ -1,3 +1,7 @@
+/**
+ * Imports the OpenAI client library.
+ * This allows us to call the OpenAI API in the rest of the code.
+ */
 import OpenAI from "openai";
 import { openaiKey as configApiKey } from "../functions/config.js";
 import promptContext from "../functions/promptContext.js";
@@ -9,12 +13,14 @@ export default async function CallOpenai(prompt, apiKey) {
 
   const options = {
     messages: [{ role: "system", content: promptContext + prompt }],
-    model: "gpt-3.5-turbo-1106"
-    // model: "gpt-4-1106-preview"
+    model: "gpt-3.5-turbo-1106",
+    // model: "gpt-4-1106-preview",
+    temperature: 2
   };
 
   const responseObject = await openai.chat.completions.create(options);
   const responseCode = responseObject.choices[0].message.content;
+  console.log(responseObject);
 
   return HandleResponseFromAPI(responseCode);
 }

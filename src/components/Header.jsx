@@ -7,7 +7,7 @@ export default function Header() {
       <div className="header-wrapper">
         <img className="header-logo" src={Logo} alt="Logo" />
         <h1 className="header-title" style={{ color: "white" }}>
-          Codepen AI
+          CodepenAI
         </h1>
       </div>
     </>

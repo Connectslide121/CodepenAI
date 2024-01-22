@@ -20,10 +20,6 @@ function App() {
   const [currentCode, setCurrentCode] = useState("");
   const [loadingMessage, setLoadingMessage] = useState("");
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
-
   const handleCodeChangeFromUser = (newCode) => {
     setCurrentCode(newCode);
   };
