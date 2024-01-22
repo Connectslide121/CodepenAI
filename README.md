@@ -36,5 +36,5 @@ Main components:
 
 ## APIs Used
 
-- OpenAI (GPT-3) - For generating code from text descriptions
+- OpenAI (GPT-3.5) - For generating code from text descriptions
 - Unsplash - For providing images based on alt text
