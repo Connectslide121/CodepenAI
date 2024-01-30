@@ -1,25 +1,57 @@
-![alt text](https://github.com/Connectslide121/codepen-ai/blob/master/Connect_banner_github.png)
+![CodepenAI Banner](https://github.com/Connectslide121/codepen-ai/blob/master/Connect_banner_github.png)
 
 # CodepenAI
 
-Introducing an innovative web development platform, harnessing the power of AI to create a dynamic and intuitive code editor experience. Craft your website effortlessly through seamless conversational interactions with the AI. Whether you choose to articulate your code verbally, fine-tune AI-generated scripts, or let the AI take the lead in code creation... the possibilities are boundless. Elevate your coding experience with limitless options for collaboration and creativity. Welcome to a new era of intuitive web development with our AI-enhanced Codepen-style editor!
+Welcome to CodepenAI, where the future of web development meets the power of artificial intelligence. Our platform offers a unique code editor experience that allows you to interact with AI in a conversational manner, making web development more intuitive and accessible than ever before.
 
-Try it [here](https://connectslide121.github.io/CodepenAI-livedemo/) (Just a live demo, there in no back end. The data gets reset when page reloads.)
+Check out the live demo [here](https://connectslide121.github.io/CodepenAI-livedemo/).
 
-Back-end repository [here](https://github.com/Connectslide121/CodepenAI-API)
+## Features
 
-## Overview
+- **AI-Powered Code Generation**: Describe what you want in plain text and let the AI generate the HTML, CSS, and JavaScript code for you.
+- **Interactive Code Editor**: Fine-tune the AI-generated code or write your own with our codemirror code editor.
+- **Project Management**: Save your projects and come back to them anytime. Edit and update as needed with ease.
+- **Live Demo**: Try out the editor with a live demo. Please note that there is no back-end, and data will reset upon page reload.
 
-The app is built with React and uses OpenAI's GPT-3.5 API to generate the code based on the user's description. The main features are:
+## Installation
 
-- A textarea for the user to describe the web app they want to build
-- A button to generate code by calling the OpenAI API
-- Display of generated HTML, CSS, and JS code blocks
-- Option to edit the generated code blocks
-- Saving generated projects
-- Viewing and editing previously saved projects
+To run CodepenAI locally, follow these steps:
 
-## Code Structure
+1. Clone the repository:
+
+```sh
+git clone https://github.com/Connectslide121/codepen-ai.git
+```
+
+2. Navigate to the project directory:
+
+```sh
+cd codepen-ai
+```
+
+3. Install dependencies:
+
+```sh
+npm install
+```
+
+4. Start the development server:
+
+```sh
+npm start
+```
+
+### Available Scripts
+
+In the project directory, you can run:
+
+- `npm start`: Runs the app in development mode.
+- `npm run build`: Builds the app for production to the build folder.
+- `npm run deploy`: Deploys the app to GitHub Pages.
+- `npm test`: Launches the test runner in interactive watch mode.
+- `npm run eject`: Removes the single build dependency from your project.
+
+### Code Structure
 
 - `src/index.js` - Entry point that renders App component
 - `src/components/App.js` - Main App component
@@ -28,13 +60,40 @@ The app is built with React and uses OpenAI's GPT-3.5 API to generate the code b
 - `src/APIs/` - API calling functions
 - `src/style.css` - Global styles
 
-Main components:
+### Contributing
 
-- `HomePage` - Home page with project list and create form
-- `ProjectPage` - View and edit a single project
-- `CodeEditor` - CodeMirror editor component
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-## APIs Used
+1. Fork the Project
 
-- OpenAI (GPT-3.5) - For generating code from text descriptions
-- Unsplash - For providing images based on alt text
+2. Create your Feature Branch
+
+```sh
+git checkout -b feature/AmazingFeature
+```
+
+3. Commit your Changes
+
+```sh
+git commit -m 'Add some AmazingFeature'
+```
+
+4. Push to the Branch
+
+```sh
+git push origin feature/AmazingFeature
+```
+
+5. Open a Pull Request
+
+### Acknowledgements
+
+[OpenAI API](https://openai.com/blog/openai-api)
+
+[React-codemirror npm](https://www.npmjs.com/package/@uiw/react-codemirror)
+
+### License
+
+Distributed under the MIT License. See LICENSE for more information.
+
+## Enjoy coding with AI at your fingertips!
