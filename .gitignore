@@ -3,7 +3,6 @@
 config.js
 examples.txt
 testPrompts.txt
-promptContext.js
 
 # dependencies
 /node_modules
