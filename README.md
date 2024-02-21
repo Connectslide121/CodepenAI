@@ -20,13 +20,13 @@ To run CodepenAI locally, follow these steps:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/Connectslide121/codepen-ai.git
+git clone https://github.com/Connectslide121/codepenAi.git
 ```
 
 2. Navigate to the project directory:
 
 ```sh
-cd codepen-ai
+cd codepenAi
 ```
 
 3. Install dependencies:
