@@ -35,18 +35,27 @@ cd codepenAI
 npm install
 ```
 
-4. Start the development server:
+4. Configure database:
+
+Set up the connection string for the database you want to use. Back end is written to use a MySQL server.
+
+5. Start the development server:
+
+This script will start back and front ends concurrently.
 
 ```sh
-npm start
+npm run dev
 ```
 
 ### Available Scripts
 
 In the project directory, you can run:
 
-- `npm start`: Runs the app in development mode.
+- `npm run dev`: Runs the app in development mode.
+- `npm endpoints`: Runs the server app in development mode.
+- `npm start`: Runs the client app in development mode.
 - `npm run build`: Builds the app for production to the build folder.
+- `npm run predeploy`: Runs the build script and deploys the app to GitHub Pages.
 - `npm run deploy`: Deploys the app to GitHub Pages.
 - `npm test`: Launches the test runner in interactive watch mode.
 - `npm run eject`: Removes the single build dependency from your project.
