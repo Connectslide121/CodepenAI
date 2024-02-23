@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { GetProjects } from "../APIs/API";
+import React, { useContext, useEffect, useState } from "react";
+import { GetProjectsByUserId } from "../APIs/API";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { CurrentUserContext } from "../functions/contexts";
 
 export default function ProjectList(props) {
+  const { currentUser } = useContext(CurrentUserContext);
+
   const [projectList, setProjectList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const projects = await GetProjects();
+      const projects = await GetProjectsByUserId(currentUser.userId);
       setProjectList(projects);
     };
 
     fetchData();
-  }, [props.rerenderKey]);
+  }, [props.rerenderKey, currentUser]);
 
   const formatDate = (dateString) => {
     const options = { day: "numeric", month: "short", year: "numeric" };

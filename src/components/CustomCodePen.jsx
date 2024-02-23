@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useCallback } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState, useCallback, useContext } from "react";
 import JSZip from "jszip";
 import CodeMirror from "@uiw/react-codemirror";
 import { color } from "@uiw/codemirror-extensions-color";
@@ -16,7 +17,6 @@ import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 import { faCss3Alt } from "@fortawesome/free-brands-svg-icons";
 import { faJs } from "@fortawesome/free-brands-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { faRotateLeft } from "@fortawesome/free-solid-svg-icons";
@@ -26,6 +26,7 @@ import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
+import { CurrentUserContext } from "../functions/contexts.js";
 
 export default function Codepen({
   htmlCode: htmlAI,
@@ -56,6 +57,7 @@ export default function Codepen({
   const [openedDescription, setOpenedDescription] = useState("");
   const [openedCreateDate, setOpenedCreateDate] = useState("");
   const [isNewProject, setIsNewProject] = useState(true);
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
   const updateOutput = useCallback(() => {
     const iframe = document.querySelector(".output-frame");
@@ -248,8 +250,10 @@ export default function Codepen({
     projectDescription,
     projectCreateDate
   ) => {
+    const userId = currentUser.userId;
     if (isNewProject) {
       const projectInfo = {
+        userId,
         projectTitle,
         projectDescription,
         htmlCode,
@@ -261,6 +265,7 @@ export default function Codepen({
       setRerenderKey((prevKey) => prevKey + 1);
     } else {
       const projectInfo = {
+        userId,
         projectId,
         projectTitle,
         projectDescription,

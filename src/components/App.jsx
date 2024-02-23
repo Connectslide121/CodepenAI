@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../style.css";
 
 import Header from "./Header.jsx";
@@ -7,11 +7,15 @@ import LoadingState from "./LoadingState.jsx";
 import Codepen from "./CustomCodePen.jsx";
 
 import CallOpenai from "../APIs/Openai.js";
-import CallGemini from "../APIs/Gemini.js";
 
 import { addImages } from "../functions/ImageAttatcher.js";
-import { CreateProject, GetProjects, UpdateProject } from "../APIs/API.js";
+import {
+  CreateProject,
+  GetProjectsByUserId,
+  UpdateProject
+} from "../APIs/API.js";
 import Footer from "./Footer.jsx";
+import { CurrentUserContext } from "../functions/contexts.js";
 
 function App() {
   const [html, setHtml] = useState("");
@@ -58,22 +62,26 @@ function App() {
     setLoadingMessage("");
   };
 
+  const [currentUser, setCurrentUser] = useState({});
+
   return (
     <>
-      <Header />
-      <InputArea onUserSubmit={handleSubmit} />
-      <LoadingState message={loadingMessage} />
-      <Codepen
-        htmlCode={html}
-        cssCode={css}
-        jsCode={js}
-        onCodeChange={handleCodeChangeFromUser}
-        updateImages={updateImages}
-        saveProject={CreateProject}
-        openProjects={GetProjects}
-        updateProject={UpdateProject}
-      />
-      <Footer />
+      <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
+        <Header />
+        <InputArea onUserSubmit={handleSubmit} />
+        <LoadingState message={loadingMessage} />
+        <Codepen
+          htmlCode={html}
+          cssCode={css}
+          jsCode={js}
+          onCodeChange={handleCodeChangeFromUser}
+          updateImages={updateImages}
+          saveProject={CreateProject}
+          openProjects={GetProjectsByUserId}
+          updateProject={UpdateProject}
+        />
+        <Footer />
+      </CurrentUserContext.Provider>
     </>
   );
 }
