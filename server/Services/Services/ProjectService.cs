@@ -35,7 +35,7 @@ namespace Services.Services
             return _mappers.MapProjectsToProjectDTOs(projects);
         }
 
-        public List<ProjectDTO> GetProjectsByUserId(string userId)
+        public List<ProjectDTO> GetProjectsByUserId(int userId)
         {
             List<Project>? projects = _dataContext.Projects
                 .Where(p => p.UserId == userId).ToList();

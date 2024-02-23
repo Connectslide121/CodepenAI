@@ -9,9 +9,6 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System;
 using Services.Interfaces;
 using Services.Services;
-using Core;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +20,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Get the connection string from the environment variable
-var connectionString = builder.Configuration.GetConnectionString("CodepenAIConnection");
+var connectionString = Environment.GetEnvironmentVariable("CodepenAIConnection");
 
 // Set the MySQL Server Version
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 35));
@@ -31,9 +28,6 @@ var serverVersion = new MySqlServerVersion(new Version(8, 0, 35));
 // Configure the DbContext with the connection string
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseMySql(connectionString, serverVersion));
-
-builder.Services.AddIdentityApiEndpoints<User>()
-    .AddEntityFrameworkStores<DataContext>();
 
 //Connect IDataService to DataService
 builder.Services.AddScoped<IUsersService, UsersService>();
@@ -47,20 +41,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.MapPost("/logout", async (SignInManager<User> signInManager,
-    [FromBody] object empty) =>
-{
-    if (empty != null)
-    {
-        await signInManager.SignOutAsync();
-        return Results.Ok();
-    }
-    return Results.Unauthorized();
-})
-.RequireAuthorization();
-
-app.MapIdentityApi<User>();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

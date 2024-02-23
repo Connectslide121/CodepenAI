@@ -31,7 +31,7 @@ namespace API.Controllers
 
         [HttpGet("user/{userId}")]
 
-        public IActionResult GetProjectsByUserId(string userId)
+        public IActionResult GetProjectsByUserId(int userId)
         {
             List<ProjectDTO> projectsByUserId = _projectsService.GetProjectsByUserId(userId);
             return projectsByUserId == null ? NotFound() : Ok(projectsByUserId);
@@ -49,6 +49,7 @@ namespace API.Controllers
         [HttpPost("create")]
         public void CreateProject([FromBody] ProjectInputModelToCreate model)
         {
+            // Your existing logic to map and process the data
             ProjectDTO projectDTO = _mappers.MapModelToProjectDTOToAdd(model);
             _projectsService.AddProject(projectDTO);
         }

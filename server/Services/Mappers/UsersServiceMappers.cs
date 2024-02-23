@@ -14,8 +14,12 @@ namespace Services.Mappers
         {
             UserDTO userDTO = new UserDTO
             {
-                UserId = user.Id,
+                UserId = user.UserId,
+                UserName = user.UserName,
+                Password = user.Password,
                 Email = user.Email,
+                RegistrationDate = user.RegistrationDate,
+                Projects = MapProjectsToProjectDTOs(user.Projects),
             };
 
             return userDTO;
@@ -25,7 +29,9 @@ namespace Services.Mappers
         {
             User user = new User
             {
-                Id = userDTO.UserId,
+                UserId = userDTO.UserId,
+                UserName = userDTO.UserName,
+                Password = userDTO.Password,
                 Email = userDTO.Email,
                 RegistrationDate = userDTO.RegistrationDate,
             };
@@ -60,5 +66,31 @@ namespace Services.Mappers
             return projectDTOs;
         }
 
+        public List<Project> MapProjectDTOsToProjects(List<ProjectDTO> projectDTOs)
+        {
+            List<Project> projects = new List<Project>();
+
+            foreach (ProjectDTO projectDTO in projectDTOs)
+            {
+                Project project = new Project
+                {
+                    ProjectId = projectDTO.ProjectId,
+                    UserId = projectDTO.UserId,
+                    Title = projectDTO.Title,
+                    Description = projectDTO.Description,
+                    HtmlCode = projectDTO.HtmlCode,
+                    CssCode = projectDTO.CssCode,
+                    JsCode = projectDTO.JsCode,
+                    CreatedAt = projectDTO.CreatedAt,
+                    UpdatedAt = projectDTO.UpdatedAt,
+                    TotalTokens = projectDTO.TotalTokens,
+                    TotalMoney = projectDTO.TotalMoney
+                };
+
+                projects.Add(project);
+            }
+
+            return projects;
+        }
     }
 }

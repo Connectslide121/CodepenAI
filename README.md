@@ -52,7 +52,7 @@ npm run dev
 In the project directory, you can run:
 
 - `npm run dev`: Runs the app in development mode.
-- `npm endpoints`: Runs the server app in development mode.
+- `npm run endpoints`: Runs the server app in development mode.
 - `npm start`: Runs the client app in development mode.
 - `npm run build`: Builds the app for production to the build folder.
 - `npm run predeploy`: Runs the build script and deploys the app to GitHub Pages.

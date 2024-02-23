@@ -11,7 +11,7 @@ namespace Services.Interfaces
     {
         void AddProject(ProjectDTO project);
         List<ProjectDTO> GetAllProjects();
-        List<ProjectDTO> GetProjectsByUserId(string userId);
+        List<ProjectDTO> GetProjectsByUserId(int userId);
         ProjectDTO GetProjectById(int projectId);
         bool UpdateProject(ProjectDTO project);
         bool RemoveProject(int projectId);

@@ -29,10 +29,10 @@ namespace Services.Services
             _dataContext.SaveChanges();
         }
 
-        public UserDTO GetUserById(string userId)
+        public UserDTO GetUserById(int userId)
         {
             User? user = _dataContext.Users
-                .Where(u => u.Id == userId)
+                .Where(u => u.UserId == userId)
                 .Include(u => u.Projects)
                 .FirstOrDefault();
 
@@ -55,7 +55,7 @@ namespace Services.Services
             return userExists;
         }
 
-        public bool RemoveUser(string userId)
+        public bool RemoveUser(int userId)
         {
             var userToDelete = _dataContext.Users.Find(userId);
             bool userExists = false;
@@ -68,23 +68,6 @@ namespace Services.Services
             }
 
             return userExists;
-        }
-
-        public UserDTO GetUserByEmail(string email)
-        {
-
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine($"THIS IS THE EMAIL: {email}");
-            Console.ResetColor();
-            
-            User? user = _dataContext.Users
-                .Where(u => u.Email == email)
-                .FirstOrDefault();
-
-
-
-            return _mappers.MapUserToUserDTO(user);
-
         }
 
     }

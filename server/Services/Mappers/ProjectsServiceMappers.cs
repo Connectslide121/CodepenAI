@@ -86,7 +86,7 @@ namespace Services.Mappers
         {
             UserDTO userDTO = new UserDTO
             {
-                UserId = user.Id,
+                UserId = user.UserId,
                 UserName = user.UserName,
                 Email = user.Email,
                 RegistrationDate = user.RegistrationDate,
@@ -100,7 +100,7 @@ namespace Services.Mappers
         {
             User user = new User
             {
-                Id = userDTO.UserId,
+                UserId = userDTO.UserId,
                 UserName = userDTO.UserName,
                 Email = userDTO.Email,
                 RegistrationDate = userDTO.RegistrationDate,

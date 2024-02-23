@@ -10,9 +10,8 @@ namespace Services.Interfaces
     public interface IUsersService
     {
         void AddUser(UserDTO user);
-        UserDTO GetUserById(string userId);
+        UserDTO GetUserById(int userId);
         bool UpdateUser(UserDTO user);
-        bool RemoveUser(string userId);
-        UserDTO GetUserByEmail(string email);
+        bool RemoveUser(int userId);
     }
 }
