@@ -32,6 +32,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "concurrently \"dotnet run --project ./server/API\" \"node startFrontend.js\"",
+    "endpoints": "dotnet watch run --project ./server/API",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
